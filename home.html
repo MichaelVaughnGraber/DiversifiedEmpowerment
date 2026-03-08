@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Diversified Empowerment</title>
+    <style>
+        :root {
+            --ks-blue: #003366;
+            --ks-gold: #ffcc00;
+            --light-bg: #f4f7f9;
+            --text-dark: #333;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        /* --- Header Section --- */
+        header {
+            background-color: var(--ks-blue);
+            color: white;
+            padding: 2rem 0 0 0;
+            text-align: center;
+            border-bottom: 8px solid var(--ks-gold); 
+            position: relative;
+            z-index: 100;
+        }
+
+        header h1 { margin: 0; font-size: 2.2rem; }
+        header p { margin: 0.5rem 0 1.5rem 0; font-weight: 300; }
+
+        /* --- Top Navigation --- */
+        nav {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px 2rem;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .nav-links-left a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .nav-links-right a {
+            color: var(--ks-gold); 
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            border: 1px solid var(--ks-gold);
+            padding: 6px 16px;
+            border-radius: 4px;
+        }
+
+        /* --- Main Layout Wrapper --- */
+        .wrapper {
+            display: flex;
+            min-height: calc(100vh - 160px);
+            position: relative;
+            /* This ensures the image starts right under the gold bar */
+            background-image: url('images/AspringWokeLiberalsLogo.jpg');
+            background-repeat: no-repeat;
+            background-position: top center; 
+            background-size: contain;
+        }
+
+        /* Overlay to keep the text readable over the background image */
+        .wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(244, 247, 249, 0.6); /* Matches light-bg with transparency */
+            z-index: 1;
+        }
+
+        /* --- Left Sidebar (20% Width) --- */
+        aside {
+            width: 20%;
+            background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+            border-right: 2px solid #ddd;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+            z-index: 10; /* Keeps it above the background overlay */
+        }
+
+        aside h3 {
+            color: var(--ks-blue);
+            font-size: 1rem;
+            border-bottom: 2px solid var(--ks-gold);
+            padding-bottom: 8px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .poem-text {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            white-space: pre-line;
+        }
+
+        /* --- Right Content Area (80% Width) --- */
+        main {
+            width: 80%;
+            z-index: 10; /* Keeps it above the background overlay */
+            padding: 2rem;
+        }
+
+        footer {
+            background: #f1f1f1;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            border-top: 1px solid #ddd;
+            position: relative;
+            z-index: 100;
+        }
+
+        @media (max-width: 1024px) {
+            aside { width: 30%; }
+            main { width: 70%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Diversified Empowerment</h1>
+    <p>Targeted Case Management | Kansas KDHE & KDADS Support</p>
+    
+    <nav>
+        <div class="nav-links-left">
+            <a href="index.html">Home</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contact.html">Contact</a>
+        </div>
+        <div class="nav-links-right">
+            <a href="Login.html">Employee / Affiliate</a>
+        </div>
+    </nav>
+</header>
+
+<div class="wrapper">
+    <aside>
+        <h3>Hello isnt this an awesome poem about .........</h3>
+        <div class="poem-text">
+            Line one of your masterpiece,
+            Line two where the words increase,
+            Line three for a rhythmic flow,
+            Line four is where the insights grow.
+        </div>
+    </aside>
+
+    <main>
+        </main>
+</div>
+
+<footer>
+    <p>&copy; 2026 DiversifiedEmpowerment.org | Serving the State of Kansas</p>
+</footer>
+
+</body>
+</html>

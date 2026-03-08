@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Diversified Empowerment</title>
+    <style>
+
+        :root {
+            --ks-blue: #003366;
+            --ks-gold: #ffcc00;
+            --light-bg: #f4f7f9;
+            --text-dark: #333;
+        }
+
+        /* Ensure the body takes up the full screen height */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        /* --- Header Section --- */
+        header {
+            background-color: var(--ks-blue);
+            color: white;
+            padding: 2rem 0 0 0;
+            text-align: center;
+            border-bottom: 8px solid var(--ks-gold); 
+            position: relative;
+            z-index: 100;
+            flex-shrink: 0; /* Prevents header from shrinking */
+        }
+
+        header h1 { margin: 0; font-size: 2.2rem; }
+        header p { margin: 0.5rem 0 1.5rem 0; font-weight: 300; }
+
+        /* --- Top Navigation --- */
+        nav {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px 2rem;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .nav-links-left a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .nav-links-right a {
+            color: var(--ks-gold); 
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            border: 1px solid var(--ks-gold);
+            padding: 6px 16px;
+            border-radius: 4px;
+        }
+
+
+        .emp-button {
+            border: 2px solid #FFCC00; /* Gold border */
+            color: #FFCC00;
+            padding: 8px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        /* Form Styles */
+        .container { max-width: 700px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .field { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; color: #333; }
+        input, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; }
+        .contact-group input, .contact-group textarea { margin-bottom: 10px; }
+        .error-msg { color: #d9534f; font-size: 0.9em; display: none; margin-bottom: 10px; }
+        #wordCount { display: block; text-align: right; color: #666; font-size: 0.85em; }
+        
+        button[type="submit"] { 
+            background-color: #003366; 
+            color: white; 
+            padding: 15px 30px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-size: 1.1em; 
+            width: 100%;
+        }
+        button:hover { background-color: #002244; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Diversified Empowerment</h1>
+        <p>Targeted Case Management | Kansas KDHE & KDADS Support</p>
+    </header>
+
+ <nav>
+        <div class="nav-links-left">
+            <a href="index.html">Home</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contact.html">Contact</a>
+        </div>
+        <div class="nav-links-right">
+            <a href="Login.html">Employee / Affiliate</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Send us a Message</h2>
+        <form id="contactForm">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+            </div>
+
+            <div class="field contact-group">
+                <label>Contact Method (At least one required):</label>
+                <input type="tel" id="cell" placeholder="Cell for text (XXX-XXX-XXXX)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                <input type="tel" id="phone" placeholder="Phone call (XXX-XXX-XXXX)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                <input type="email" id="email" placeholder="Email Address">
+                <textarea id="address" placeholder="Mailing Address" rows="2"></textarea>
+                <p id="contactError" class="error-msg">Please provide at least one valid contact method.</p>
+            </div>
+
+            <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" rows="8" placeholder="How can we help?"></textarea>
+                <span id="wordCount">0 / 300 words</span>
+            </div>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const messageArea = document.getElementById('message');
+        const wordCountDisplay = document.getElementById('wordCount');
+
+        // Logic to limit to 300 words
+        messageArea.addEventListener('input', () => {
+            const words = messageArea.value.trim().split(/\s+/).filter(word => word.length > 0);
+            wordCountDisplay.textContent = `${words.length} / 300 words`;
+            if (words.length > 300) {
+                const trimmed = messageArea.value.split(/\s+/, 300).join(" ");
+                messageArea.value = trimmed;
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const cell = document.getElementById('cell').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+
+            if (!cell && !phone && !email && !address) {
+                document.getElementById('contactError').style.display = 'block';
+                return;
+            }
+
+            // Hidden Email Logic
+            const u = "erikajoswander";
+            const d = "outlook.com";
+            const recipient = u + "@" + d;
+
+            const subject = "Contact Form: " + document.getElementById('name').value;
+            const body = `Name: ${document.getElementById('name').value}%0D%0A` +
+                         `Text: ${cell}%0D%0ACall: ${phone}%0D%0AEmail: ${email}%0D%0A` +
+                         `Address: ${address}%0D%0A%0D%0AMessage:%0D%0A${messageArea.value}`;
+
+            window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${body}`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diversified Empowerment | Kansas TCM Resources</title>
+    <style>
+        :root {
+            --ks-blue: #003366;
+            --ks-gold: #ffcc00;
+            --light-bg: #f4f7f9;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        /* --- Header Section --- */
+        header {
+            background-color: var(--ks-blue);
+            color: white;
+            padding: 2.5rem 0 0 0;
+            text-align: center;
+            border-bottom: 8px solid var(--ks-gold); 
+            position: relative;
+            z-index: 10;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            padding: 0 1rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 1.5rem 0;
+            font-weight: 300;
+            padding: 0 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* --- Navigation: Flexbox Split --- */
+        nav {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px 2rem;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links-left a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links-right a {
+            color: var(--ks-gold); 
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            border: 1px solid var(--ks-gold);
+            padding: 6px 16px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .nav-links-right a:hover {
+            background: var(--ks-gold);
+            color: var(--ks-blue);
+        }
+
+        .nav-links-left a:hover {
+            color: var(--ks-gold);
+        }
+
+        /* --- Main Content Area with Background Image --- */
+        .main-content {
+            position: relative;
+            min-height: 75vh;
+            padding: 4rem 1rem;
+            overflow: hidden;
+        }
+
+        .main-content::before {
+            content: "";
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            background-image: url('images/AspringWokeLiberalsLogo.jpg'); 
+            background-size: contain; 
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2.5rem;
+            border-top: 4px solid var(--ks-blue);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-left: 5px solid var(--ks-blue);
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .footer {
+            background: #f1f1f1;
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 0.85rem;
+            color: #555;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            nav { justify-content: center; }
+            .nav-links-left { margin-bottom: 15px; width: 100%; text-align: center; }
+            .nav-links-right { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Diversified Empowerment</h1>
+    <p>Targeted Case Management | Kansas KDHE & KDADS Support</p>
+    
+    <nav>
+        <div class="nav-links-left">
+            <a href="home.html">Home</a>
+            <a href="Resources.html">Resources</a>
+            <a href="Contact.html">Contact</a>
+        </div>
+        <div class="nav-links-right">
+            <a href="Login.html">Employee / Affiliate</a>
+        </div>
+    </nav>
+</header>
+
+<div class="main-content">
+    <div class="container">
+        <section class="hero">
+            <h2>Advocating for Kansas TCMs</h2>
+            <p>Welcome to <strong>Diversified Empowerment</strong>. This entry point connects Targeted Case Managers with the essential tools needed to master <strong>KDADS</strong> and <strong>KDHE</strong> compliance in Kansas.</p>
+        </section>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Get Started</h3>
+                <p>Visit our home dashboard to see the latest announcements and system updates for TCM professionals.</p>
+                <a href="home.html" style="color: var(--ks-blue); font-weight: bold; text-decoration: none;">Go to Home &rarr;</a>
+            </div>
+            <div class="card">
+                <h3>Policy Hub</h3>
+                <p>Direct access to official manuals and billing documentation for Kansas disability services.</p>
+                <a href="Resources.html" style="color: var(--ks-blue); font-weight: bold; text-decoration: none;">View Resources &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2026 DiversifiedEmpowerment.org | Serving the Kansas TCM Community</p>
+</footer>
+
+</body>
+</html>
